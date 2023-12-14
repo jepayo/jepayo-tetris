@@ -1,0 +1,45 @@
+.the_grid{
+    display: grid;
+    grid-template-columns: 10px repeat(10,40px) 10px;
+    grid-template-rows: 10px repeat(20,40px) 10px;
+    max-width: 420px;
+    margin: auto;
+}
+
+body {
+    text-align: center;
+    background-color: #5d5d5d;
+}
+
+.fichaeje {
+    visibility: hidden;
+}
+
+.ghosteje {
+    visibility: hidden;
+}
+
+#level-title {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    margin: 2%;
+    color: #FEF2BF;
+}
+
+.bloque {
+    border: 1px dotted #ffffff;
+}
+.ficha {
+    border: 1px dotted #ffffff;
+}
+
+.ghost {
+    /* border: 4px solid #ccde07; */
+    visibility: hidden;
+}
+
+.ghostcheck{
+    border-color: #09c92f;
+    border: 3px solid #b51515;
+}
+
