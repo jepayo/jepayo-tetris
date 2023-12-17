@@ -15,7 +15,7 @@
 
   <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-8"><div class="the_grid" onclick="mueve_ficha('Spacegit ')"></div></div>
+        <div class="col-12 col-md-8"><div class="the_grid" onclick="mueve_ficha('Space')"></div></div>
         <div class="col-md-4" style="background-color: rgb(179, 179, 179);">
           <label for="customRange1" class="form-label">Determine Block Width</label>
           <input type="range" class="form-range" min="20" max="50" step="1" id="customRange1" onmouseup="document.querySelector('.the_grid').focus()" oninput="document.querySelector(':root').style.setProperty('--cell-width',this.value + 'px');document.querySelector(':root').style.setProperty('--cell-height',this.value + 'px');document.querySelector('.the_grid').focus()">
