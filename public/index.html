@@ -15,7 +15,7 @@
 
   <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-8"><div class="the_grid"></div></div>
+        <div class="col-12 col-md-8"><div class="the_grid" onclick="rota_ficha()"></div></div>
         <div class="col-md-4" style="background-color: rgb(179, 179, 179);">
           <label for="customRange1" class="form-label">Determine Block Width</label>
           <input type="range" class="form-range" min="20" max="50" step="1" id="customRange1" onmouseup="document.querySelector('.the_grid').focus()" oninput="document.querySelector(':root').style.setProperty('--cell-width',this.value + 'px');document.querySelector(':root').style.setProperty('--cell-height',this.value + 'px');document.querySelector('.the_grid').focus()">
@@ -25,6 +25,8 @@
 
           <label for="customRange4" class="form-label">Determine Height</label>
           <input type="range" class="form-range" min="10" max="30" step="1" id="customRange4" oninput="document.querySelector(':root').style.setProperty('--height-cells',this.value);repintaBordes();document.querySelector('.the_grid').focus()">
+          <button type="button" class="btn btn-success" onclick="window.location.reload()">Re-Start!</button>
+          <button type="button" class="btn btn-primary" onclick="a_little_of_help()">A little of HELP!</button>
         </div>
     </div>
   </div>

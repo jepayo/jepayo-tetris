@@ -500,6 +500,18 @@ function repintaBordes(){
     }
 }
 
+function a_little_of_help() {
+    let collis = $('.bloque').filter(function() {return $(this).hasClass("border") == false;});
+    let max = 0;
+    if ($(collis).length>15){
+        max = 15;
+    } else {
+        max = $(collis).length;
+    }
+    collis = collis.slice(0, max);
+    $(collis).remove();
+}
+
 main();
 
 
