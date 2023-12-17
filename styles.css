@@ -1,8 +1,17 @@
+:root {
+    --cell-width: 40px;
+    --cell-height: 40px;
+    --width-cells: 10;
+    --height-cells: 20;
+}
+  
+  
 .the_grid{
     display: grid;
-    grid-template-columns: 10px repeat(10,40px) 10px;
-    grid-template-rows: 10px repeat(20,40px) 10px;
-    max-width: 420px;
+    grid-template-columns: 10px repeat(var(--width-cells),var(--cell-width)) 10px;
+    grid-template-rows: 10px repeat(var(--height-cells),var(--cell-height)) 10px;
+    --pre-calcs: calc(10 * 2);
+    max-width: calc(10px * 2 + (var(--width-cells) * var(--cell-width)));
     margin: auto;
 }
 

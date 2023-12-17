@@ -10,6 +10,20 @@ var miFichaNum = -1;
 ////music on
 //adaptive?
 
+//mas sonidos:
+    //cui' cuando giras
+    // tururum cuando linea
+    //gameover:
+        //que exista
+        //tum tum tum tummmmmmmmm
+
+//puntos y menus alrededor.
+    //guarden los records.
+
+//tweaks
+
+// convert to ejs.
+
 
 class Bloque {
     constructor(posx=1, posy=1,x=1,y=1,la_class="") {
@@ -332,17 +346,9 @@ function main(){
         }
         mueve_ficha("",event.code);
         console.log(event);
-
     });
 
-    for (let i=1;i<23;i++){
-        pintaBloques("white","border",[new Bloque(1,i,1,1,"bloque")]);
-        pintaBloques("white","border",[new Bloque(12,i,1,1,"bloque")]);
-    }
-    for (let i=1;i<12;i++){
-        pintaBloques("white","border",[new Bloque(i,22,1,1,"bloque")]);
-        pintaBloques("white","border",[new Bloque(i,1,1,1,"bloque")]);
-    }
+    repintaBordes();
 
     ficha_creator("ficha");
 
@@ -474,6 +480,24 @@ function check_vecinos_ficha(){
 
     });
 
+}
+
+
+function repintaBordes(){
+    console.log($(".the_grid").css("grid-template-columns"));
+    $(".border").remove();
+
+    let num_cols = $(".the_grid").css("grid-template-columns").split(" ").length;
+    let num_rows = $(".the_grid").css("grid-template-rows").split(" ").length;
+
+    for (let i=1;i<num_rows+1;i++){
+        pintaBloques("white","border",[new Bloque(1,i,1,1,"bloque")]);
+        pintaBloques("white","border",[new Bloque(num_cols,i,1,1,"bloque")]);
+    }
+    for (let i=1;i<num_cols+1;i++){
+        pintaBloques("white","border",[new Bloque(i,num_rows,1,1,"bloque")]);
+        pintaBloques("white","border",[new Bloque(i,1,1,1,"bloque")]);
+    }
 }
 
 main();
