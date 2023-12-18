@@ -362,6 +362,10 @@ function main(){
             mueve_ficha("Le");
         if (swipedir =='right')
             mueve_ficha("Ri");
+        if (swipedir =='down')
+            mueve_ficha("Space");
+        if (swipedir =='none')
+            rota_ficha();
     });
 
 
