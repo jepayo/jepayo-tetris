@@ -4,7 +4,8 @@
     --width-cells: 10;
     --height-cells: 20;
 }
-  
+
+html, body{overflow:hidden;}
   
 .the_grid{
     display: grid;
