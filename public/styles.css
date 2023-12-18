@@ -5,7 +5,7 @@
     --height-cells: 20;
 }
 
-html, body{overflow:hidden;}
+/* html, body{overflow:hidden;} */
   
 .the_grid{
     display: grid;
