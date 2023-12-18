@@ -356,7 +356,7 @@ function main(){
     // $(".the_grid").on("swiperigth",mueve_ficha("Ri"));
     // $(".the_grid").on("taphold",mueve_ficha("Space"));
 
-    var el = document.getElementById(".the_grid")
+    var el = document.querySelector(".the_grid")
     swipedetect(el, function(swipedir){
         if (swipedir =='left')
             alert('You just swiped left!');
