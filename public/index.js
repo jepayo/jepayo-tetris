@@ -348,6 +348,15 @@ function main(){
         console.log(event);
     });
 
+    document.querySelector(".the_grid").addEventListener('swipe', (event) => {  
+        mueve_ficha("Ri");
+    });
+
+
+    $(".the_grid").on("swipeleft",mueve_ficha("Le"));
+    $(".the_grid").on("swiperigth",mueve_ficha("Ri"));
+    $(".the_grid").on("taphold",mueve_ficha("Space"));
+
     repintaBordes();
 
     ficha_creator("ficha");
