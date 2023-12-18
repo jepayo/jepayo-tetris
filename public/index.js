@@ -359,7 +359,9 @@ function main(){
     var el = document.querySelector(".the_grid")
     swipedetect(el, function(swipedir){
         if (swipedir =='left')
-            alert('You just swiped left!');
+            mueve_ficha("Le");
+        if (swipedir =='right')
+            mueve_ficha("Ri");
     });
 
 
