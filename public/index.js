@@ -348,14 +348,20 @@ function main(){
         console.log(event);
     });
 
-    document.querySelector(".the_grid").addEventListener('swipe', (event) => {  
-        mueve_ficha("Ri");
+    // document.querySelector(".the_grid").addEventListener('swipe', (event) => {  
+    //     mueve_ficha("Ri");
+    // });
+
+    // $(".the_grid").on("swipeleft",mueve_ficha("Le"));
+    // $(".the_grid").on("swiperigth",mueve_ficha("Ri"));
+    // $(".the_grid").on("taphold",mueve_ficha("Space"));
+
+    var el = document.getElementById(".the_grid")
+    swipedetect(el, function(swipedir){
+        if (swipedir =='left')
+            alert('You just swiped left!');
     });
 
-
-    $(".the_grid").on("swipeleft",mueve_ficha("Le"));
-    $(".the_grid").on("swiperigth",mueve_ficha("Ri"));
-    $(".the_grid").on("taphold",mueve_ficha("Space"));
 
     repintaBordes();
 
