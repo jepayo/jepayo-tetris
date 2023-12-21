@@ -12,23 +12,44 @@
 </head>
 
 <body>
-  <h1 id="level-title">This is my version of Tetris</h1>
+  <!-- <h1 id="level-title">This is my version of Tetris</h1> -->
 
   <div class="container-fluid">
+    <div class="row" style="height: 50px">
+      <div class="col-12 level_title">Tetris Sim</div>
+    </div>
+    <!-- <div class="row" style="height: 50px">
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+      <div class="col-1" style="background-color: red"></div>
+      <div class="col-1" style="background-color: green"></div>
+    </div> -->
     <div class="row">
-        <div class="col-12 col-md-8"><div class="the_grid" onclick="mueve_ficha('Space')"></div></div>
+        
         <div class="col-md-4" style="background-color: rgb(179, 179, 179);">
           <!-- <label for="customRange1" class="form-label">Determine Block Width</label>
           <input type="range" class="form-range" min="20" max="50" step="1" id="customRange1" onmouseup="document.querySelector('.the_grid').focus()" oninput="document.querySelector(':root').style.setProperty('--cell-width',this.value + 'px');document.querySelector(':root').style.setProperty('--cell-height',this.value + 'px');document.querySelector('.the_grid').focus()"> -->
 
           <label for="customRange3" class="form-label">Determine Width</label>
-          <input type="range" class="form-range" min="6" max="20" step="1" id="customRange3" oninput="document.querySelector(':root').style.setProperty('--width-cells',this.value);repintaBordes();document.querySelector('.the_grid').focus()">
+          <input type="range" class="form-range" min="6" max="60" step="1" id="customRange3" oninput="document.querySelector(':root').style.setProperty('--grid-cols',this.value);repintaBordes();recalculate_grid_size();this.blur()">
 
           <label for="customRange4" class="form-label">Determine Height</label>
-          <input type="range" class="form-range" min="10" max="30" step="1" id="customRange4" oninput="document.querySelector(':root').style.setProperty('--height-cells',this.value);repintaBordes();document.querySelector('.the_grid').focus()">
-          <button type="button" class="btn btn-success" onclick="window.location.reload()">Re-Start!</button>
-          <button type="button" class="btn btn-primary" onclick="a_little_of_help()">A little of HELP!</button>
+          <input type="range" class="form-range" min="10" max="30" step="1" id="customRange4" oninput="document.querySelector(':root').style.setProperty('--grid-rows',this.value);repintaBordes();recalculate_grid_size();this.blur()">
+          <button type="button" class="btn btn-success" onclick="window.location.reload();this.blur()">Re-Start!</button>
+          <button type="button" class="btn btn-danger" onclick="a_little_of_help();this.blur()">A little of HELP!</button>
+          <button type="button" class="btn btn-primary" onclick="$('.ficha').remove();ficha_creator('ficha',4);this.blur()">Take a BAR!</button>
+          <button type="button" class="btn btn-danger" onclick="play_tetris_music();this.remove()">🎷Unmute!🎼</button>
+        
         </div>
+        <div class="col-12 col-md-8 g-0"><div class="the_grid" onclick="mueve_ficha('Space')"></div></div>
     </div>
   </div>
 

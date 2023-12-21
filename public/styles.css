@@ -1,24 +1,28 @@
 :root {
-    --cell-width: 40px;
-    --cell-height: 40px;
-    --width-cells: 10;
-    --height-cells: 20;
+    --block-height-width: 40;
+    --grid-cols: 10;
+    --grid-rows: 20;
+    --top-menu-height: 101;
 }
 
 /* html, body{overflow:hidden;} */
   
 .the_grid{
     display: grid;
-    grid-template-columns: 10px repeat(var(--width-cells),var(--cell-width)) 10px;
-    grid-template-rows: 10px repeat(var(--height-cells),var(--cell-height)) 10px;
-    --pre-calcs: calc(10 * 2);
-    max-width: calc(10px * 2 + (var(--width-cells) * var(--cell-width)));
+    grid-template-columns: 10px repeat(calc(var(--grid-cols)),calc(var(--block-height-width) * 1px)) 10px;
+    grid-template-rows: repeat(calc(var(--grid-rows)),calc(var(--block-height-width) * 1px)) 10px;
+    --pre-calcs1: calc(10px * 2);
+    --pre-calcs2: calc((var(--grid-cols) * var(--block-height-width)));
+    --pre-calcs3: var(--pre-calcs2) * 1px;
+    max-width: calc(var(--pre-calcs1) + var(--pre-calcs3));
     margin: auto;
 }
 
 body {
     text-align: center;
     background-color: #5d5d5d;
+    background-image: url("bck_pattern.jpg");
+
 }
 
 .fichaeje {
@@ -29,10 +33,10 @@ body {
     visibility: hidden;
 }
 
-#level-title {
+.level_title {
     font-family: 'Press Start 2P';
-    font-size: 2rem;
-    margin: 2%;
+    font-size: 30px;
+    margin: 0;
     color: #FEF2BF;
 }
 
